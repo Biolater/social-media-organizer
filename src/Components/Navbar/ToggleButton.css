@@ -1,0 +1,37 @@
+.toggle-button {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Initial state - Burger icon */
+.toggle-button .bar1,
+.toggle-button .bar2,
+.toggle-button .bar3 {
+    width: 25px;
+    height: 4px;
+    background-color: #333;
+    margin: 2.5px 0; /* Adjusted margin for better spacing */
+    transition: all 0.2s;
+    border-radius: 5px; /* Added border-radius for rounded ends */
+}
+
+/* Open state - X icon */
+.toggle-button.open .bar1 {
+    transform: rotate(-45deg) translate(-7px, 7px);
+}
+
+.toggle-button.open .bar2 {
+    opacity: 0;
+    width: 0px;
+}
+
+.toggle-button.open .bar3 {
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+
+.toggle-button:hover *{
+    opacity: .8;
+}
