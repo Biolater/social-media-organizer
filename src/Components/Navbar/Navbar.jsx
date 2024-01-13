@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ToggleButton from "./ToggleButton";
 
 const Navbar = () => {
@@ -7,6 +7,14 @@ const Navbar = () => {
   const handleButtonClick = () => {
     setNavbarOpen(!navbarOpen);
   };
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      document.querySelector(".main-header").style.top = "0px";
+    },100);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
     <header className="main-header">
       <div className="container">

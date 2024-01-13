@@ -1,8 +1,10 @@
 .main-header {
     padding: 15px 0px;
     position: fixed;
-    top: 0;
+    top: -200px;
     width: 100%;
+    transition: top 0.5s;
+    z-index: 10;
 }
 
 .main-header .container {
@@ -17,22 +19,22 @@
     padding: 15px 10px 15px;
     border-radius: 10px;
     background-color: rgba(232, 229, 228, 0.5);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(30px);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     transition: .3s;
     max-height: 57px;
     overflow: hidden;
 }
 
-.navbar-links .navbar-item{
+.navbar-links .navbar-item {
     margin: 0px 10px;
 }
 
-.navbar-link{
+.navbar-link {
     transition: color .3s;
 }
 
-.navbar-links .navbar-item:hover .navbar-link{
+.navbar-links .navbar-item:hover .navbar-link {
     color: rgba(0, 0, 0, 0.4);
 }
 
@@ -40,6 +42,7 @@
     border-radius: 10px 10px 0px 0px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 12px -3px;
 }
+
 .navbar-item {
     cursor: pointer;
 }
@@ -49,11 +52,10 @@
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    color: black;
+    color: #191919;
     letter-spacing: 1.2px;
     font-size: 18px;
     padding-left: 5px;
-    font-family: var(--special-font);
 }
 
 .navbar svg {
@@ -85,8 +87,8 @@
     border-radius: 10px;
 }
 
-.navbar-links__toggle .navbar-item:hover{
-    background-color: rgba(0,0,0,0.15);
+.navbar-links__toggle .navbar-item:hover {
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 .navbar-link {
@@ -94,13 +96,13 @@
     font-weight: 600;
 }
 
-.navbar-links__toggle{
+.navbar-links__toggle {
     opacity: 0;
     pointer-events: none;
     transition: opacity .3s;
 }
 
-.navbar-toggle__active{
+.navbar-toggle__active {
     opacity: 1;
     pointer-events: auto;
 }
