@@ -7,6 +7,8 @@
     background-position-x: -489px;
     display: flex;
     align-items: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 #hero-section .container{
