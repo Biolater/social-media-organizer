@@ -15,8 +15,8 @@
     background-color: rgba(233, 234, 235, .7);
     padding: 20px 20px;
     backdrop-filter: blur(15px);
-    transition: .5s;
-    transform: translateX(9999px);
+    transition: .7s;
+    transform: translateX(calc(100vw + 100%));
 }
 
 
