@@ -3,7 +3,8 @@ import { useEffect } from "react";
 const Hero = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-        document.querySelector("#hero-section .container").style.transform = "translateX(0px)"
+      document.querySelector("#hero-section .container").style.transform =
+        "translateX(0px)";
     }, 450);
     return () => clearTimeout(timeoutId);
   }, []);
