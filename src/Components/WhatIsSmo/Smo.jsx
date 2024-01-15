@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import "./Smo.css";
-import { useState } from "react";
+
+const Answer = React.memo(({ title, description }) => (
+  <div className="answer">
+    <h2 className="section-title">{title}</h2>
+    <p className="section-description">{description}</p>
+  </div>
+));
+
 const Smo = () => {
   const qualities = [
     {
@@ -34,67 +41,63 @@ const Smo = () => {
       icon: "🌐",
     },
   ];
-
   const [activeAccordion, setActiveAccordion] = useState([]);
 
-  const handleAccordionClick = (accordionName) => {
+  const handleAccordionClick = useCallback((accordionName) => {
     setActiveAccordion((previousArray) => {
       if (previousArray.includes(accordionName)) {
-        const newArray = previousArray.filter((item) => item !== accordionName);
-        return newArray;
+        return previousArray.filter((item) => item !== accordionName);
       } else {
         return [...previousArray, accordionName];
       }
     });
-  };
+  }, []);
 
   return (
-    <section id="what-is-smo">
-      <div className="container">
-        <div className="answer">
-          <h2 className="section-title">What is SMO?</h2>
-          <p className="section-description">
-            SMO (Social Media Organizer) is a tool designed to simplify your
-            social media experience. Forget about the hassle of managing
-            multiple accounts and passwords. With SMO, you can centralize and
-            organize your social media information in one place.
-          </p>
-        </div>
-        <div className="answer">
-          <h2 className="section-title">Why SMO?</h2>
-          <p className="section-description">
-            SMO simplifies your social media experience. Centralize and organize
-            all your accounts in one place, eliminating the hassle of managing
-            multiple passwords.
-          </p>
-        </div>
-        <div className="accordion-container">
-          <div className="accordion-title">
-            <h2>Key Qualities</h2>
-          </div>
-          {qualities.map((item, index) => (
-            <div
-              key={index}
-              onClick={() => handleAccordionClick(item.name)}
-              className={`accordion-item ${activeAccordion.includes(item.name) ? "active" : ""}`}
-            >
-              <div className="accordion-header">
-                <p>
-                  {item.name} {item.icon}
-                </p>
-              </div>
+    <>
+      <section id="what-is-smo">
+        <div className="container">
+          <Answer
+            title="What is SMO?"
+            description="SMO (Social Media Organizer) is a tool designed to simplify your social media experience. Forget about the hassle of managing multiple accounts and passwords. With SMO, you can centralize and organize your social media information in one place."
+          />
+          <Answer
+            title="Why SMO?"
+            description="SMO simplifies your social media experience. Centralize and organize all your accounts in one place, eliminating the hassle of managing multiple passwords."
+          />
+          <div className="accordion-container">
+            <div className="accordion-title">
+              <h2>Key Qualities</h2>
+            </div>
+            {qualities.map(({ name, icon, content }) => (
               <div
-                className={`accordion-content ${
-                  activeAccordion.includes(item.name) ? "content-active" : ""
+                key={name}
+                onClick={() => handleAccordionClick(name)}
+                className={`accordion-item ${
+                  activeAccordion.includes(name) ? "active" : ""
                 }`}
               >
-                <p>{item.content}</p>
+                <div className="accordion-header">
+                  <p>
+                    {name} {icon}
+                  </p>
+                  <span className="accordion-arrow">
+                    {activeAccordion.includes(name) ? "-" : "+"}
+                  </span>
+                </div>
+                <div
+                  className={`accordion-content ${
+                    activeAccordion.includes(name) ? "content-active" : ""
+                  }`}
+                >
+                  <p>{content}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
