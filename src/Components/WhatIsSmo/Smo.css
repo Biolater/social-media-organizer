@@ -1,0 +1,80 @@
+#what-is-smo {
+    height: 100vh;
+    width: 100%;
+    padding: 40px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+#what-is-smo .section-title {
+    font-size: 32px;
+}
+
+#what-is-smo .section-description {
+    margin-top: 5px;
+}
+
+#what-is-smo .container .answer:nth-child(2) {
+    margin-top: 32px;
+}
+
+.accordion-title h2 {
+    font-size: 32px;
+}
+
+.accordion-title {
+    margin-bottom: 15px;
+}
+
+.accordion-header {
+    position: relative;
+}
+
+.accordion-container {
+    margin-top: 32px;
+}
+
+.accordion-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-top: 1px solid #333;
+}
+
+.accordion-content {
+    height: 0;
+    overflow: hidden;
+}
+
+.accordion-content p {
+    padding: 10px 0px;
+}
+
+.content-active {
+    height: auto;
+}
+
+.accordion-item .accordion-header::after {
+    content: "+";
+    font-size: 18px;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+.active {
+    display: block;
+}
+
+.accordion-item.active .accordion-header::after {
+    content: "-";
+}
+
+.accordion-header p {
+    font-size: 20px;
+    font-weight: 600;
+}
