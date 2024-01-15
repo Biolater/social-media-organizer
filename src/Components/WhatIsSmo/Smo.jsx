@@ -76,9 +76,7 @@ const Smo = () => {
             <div
               key={index}
               onClick={() => handleAccordionClick(item.name)}
-              className={`accordion-item ${
-                activeAccordion.includes(item.name) ? "active" : ""
-              }`}
+              className={`accordion-item ${activeAccordion.includes(item.name) ? "active" : ""}`}
             >
               <div className="accordion-header">
                 <p>
