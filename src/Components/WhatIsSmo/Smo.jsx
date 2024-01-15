@@ -81,9 +81,6 @@ const Smo = () => {
                   <p>
                     {name} {icon}
                   </p>
-                  <span className="accordion-arrow">
-                    {activeAccordion.includes(name) ? "-" : "+"}
-                  </span>
                 </div>
                 <div
                   className={`accordion-content ${
