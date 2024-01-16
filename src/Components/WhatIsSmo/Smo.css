@@ -1,97 +1,88 @@
-#what-is-smo{
-    height: 100vh;
-    width: 100%;
+#what-is-smo {
     padding: 40px 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 
 
-#what-is-smo .section-title{
+#what-is-smo .section-title {
     font-size: 32px;
 }
 
-#what-is-smo .section-description{
+#what-is-smo .section-description {
     margin-top: 5px;
 }
 
-#what-is-smo .container .answer:nth-child(2){
+#what-is-smo .container .answer:nth-child(2) {
     margin-top: 32px;
 }
 
-.accordion-title h2{
+.accordion-title h2 {
     font-size: 32px;
 }
 
-.accordion-title{
+.accordion-title {
     margin-bottom: 15px;
 }
 
-.accordion-header{
+.accordion-header {
     position: relative;
 }
 
-.accordion-container{
+.accordion-container {
     margin-top: 32px;
 }
 
 .accordion-item {
+    transition: all .3s;
     padding: 10px 20px;
     cursor: pointer;
     border-top: 1px solid #333;
-}
-
-.accordion-content {
-    height: 0;
     overflow: hidden;
 }
 
-.accordion-content p{
+
+
+.accordion-content p {
     padding: 10px 0px;
 }
 
-.content-active{
-    height: auto;
-}
 
-.accordion-item .accordion-header::after{
+.accordion-item .accordion-header::after {
     content: "+";
     font-size: 18px;
     font-weight: 600;
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-.active{
-    display: block;
-}
 
-.accordion-item.active .accordion-header::after{
+
+.accordion-item.active .accordion-header::after {
     content: "-";
 }
 
-.accordion-header p{
+.accordion-header p {
     font-size: 20px;
     font-weight: 600;
 }
 
 
-@media(min-width:576px){
-    .section-title{
+@media(min-width:576px) {
+    .section-title {
         font-size: 34px;
     }
-    #what-is-smo .section-description{
+
+    #what-is-smo .section-description {
         font-size: 18px;
     }
-    .accordion-title h2{
+
+    .accordion-title h2 {
         font-size: 34px;
     }
-    .accordion-header p{
+
+    .accordion-header p {
         font-size: 22px;
     }
 }
-

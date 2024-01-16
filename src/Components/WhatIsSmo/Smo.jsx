@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import "./Smo.css";
 
 const Answer = React.memo(({ title, description }) => (
@@ -41,17 +41,30 @@ const Smo = () => {
       icon: "🌐",
     },
   ];
-  const [activeAccordion, setActiveAccordion] = useState([]);
+
+  const [activeAccordion, setActiveAccordion] = useState(null);
+  const accordionRefs = qualities.reduce((acc, { name }) => {
+    acc[name] = useRef(null);
+    return acc;
+  }, {});
 
   const handleAccordionClick = useCallback((accordionName) => {
-    setActiveAccordion((previousArray) => {
-      if (previousArray.includes(accordionName)) {
-        return previousArray.filter((item) => item !== accordionName);
-      } else {
-        return [...previousArray, accordionName];
+    setActiveAccordion((prevAccordion) =>
+      prevAccordion === accordionName ? null : accordionName
+    );
+  }, []);
+
+  useEffect(() => {
+    // Adjust the max-height of accordion items based on content
+    qualities.forEach(({ name }) => {
+      const ref = accordionRefs[name];
+      if (ref && ref.current) {
+        ref.current.style.maxHeight = `${
+          activeAccordion === name ? ref.current.scrollHeight : 49
+        }px`;
       }
     });
-  }, []);
+  }, [activeAccordion, accordionRefs, qualities]);
 
   return (
     <>
@@ -74,8 +87,9 @@ const Smo = () => {
                 key={name}
                 onClick={() => handleAccordionClick(name)}
                 className={`accordion-item ${
-                  activeAccordion.includes(name) ? "active" : ""
+                  activeAccordion === name ? "active" : ""
                 }`}
+                ref={accordionRefs[name]}
               >
                 <div className="accordion-header">
                   <p>
@@ -84,7 +98,7 @@ const Smo = () => {
                 </div>
                 <div
                   className={`accordion-content ${
-                    activeAccordion.includes(name) ? "content-active" : ""
+                    activeAccordion === name ? "content-active" : ""
                   }`}
                 >
                   <p>{content}</p>

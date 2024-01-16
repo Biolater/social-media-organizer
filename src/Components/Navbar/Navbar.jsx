@@ -11,7 +11,7 @@ const Navbar = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       document.querySelector(".main-header").style.top = "0px";
-    },100);
+    }, 100);
     return () => clearTimeout(timeoutId);
   }, []);
 
@@ -24,27 +24,27 @@ const Navbar = () => {
           </a>
           <ul className="navbar-links">
             <li className="navbar-item">
-              <a href="#" className="navbar-link">
+              <a href="" className="navbar-link">
                 Get Started
               </a>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">
+              <a href="#what-is-smo" className="navbar-link">
                 What is SMO
               </a>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">
+              <a href="" className="navbar-link">
                 About Me
               </a>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">
+              <a href="" className="navbar-link">
                 My Portfolio
               </a>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">
+              <a href="" className="navbar-link">
                 Contact
               </a>
             </li>
@@ -59,7 +59,9 @@ const Navbar = () => {
             />
           </a>
           <ul
-            className={`navbar-links__toggle ${navbarOpen ? "navbar-toggle__active" : ""}`}
+            className={`navbar-links__toggle ${
+              navbarOpen ? "navbar-toggle__active" : ""
+            }`}
           >
             <li className="navbar-item">
               <a href="#" className="navbar-link">
@@ -67,7 +69,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">
+              <a href="#what-is-smo" className="navbar-link">
                 What is SMO
               </a>
             </li>

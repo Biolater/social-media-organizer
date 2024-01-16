@@ -4,6 +4,10 @@
   --text-color: #191919;
 }
 
+html{
+  scroll-behavior: smooth!important;
+}
+
 *,
 *::after,
 *::before {
@@ -11,9 +15,6 @@
   margin: 0;
 }
 
-#root {
-  height: 100000px;
-}
 
 body {
   font-family: 'Manrope', sans-serif;
