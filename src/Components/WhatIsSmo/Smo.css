@@ -30,6 +30,9 @@
 
 .accordion-container {
     margin-top: 32px;
+    transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+    transform: translateY(-50px);
+    opacity: 0;
 }
 
 .accordion-item {
@@ -85,4 +88,15 @@
     .accordion-header p {
         font-size: 22px;
     }
+}
+
+.answer{
+    transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.fade-in{
+    transform: translateY(0px);
+    opacity: 1;
 }

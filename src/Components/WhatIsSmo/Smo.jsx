@@ -1,14 +1,17 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import "./Smo.css";
 
-const Answer = React.memo(({ title, description }) => (
-  <div className="answer">
+// Answer component
+const Answer = React.memo(({ title, description, answerRef }) => (
+  <div className="answer" ref={answerRef}>
     <h2 className="section-title">{title}</h2>
     <p className="section-description">{description}</p>
   </div>
 ));
 
+// Smo component
 const Smo = () => {
+  // Qualities data
   const qualities = [
     {
       name: "Easy to Use",
@@ -42,20 +45,45 @@ const Smo = () => {
     },
   ];
 
+  // State and refs
   const [activeAccordion, setActiveAccordion] = useState(null);
   const accordionRefs = qualities.reduce((acc, { name }) => {
     acc[name] = useRef(null);
     return acc;
   }, {});
+  const myRef1 = useRef();
+  const myRef2 = useRef();
+  const myRef3 = useRef();
 
+  // Intersection Observer effect
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(myRef1.current);
+    observer.observe(myRef2.current);
+    observer.observe(myRef3.current);
+    return () => {
+      observer.disconnect();
+    };
+  }, [myRef1, myRef2, myRef3]);
+
+  // Handle accordion click
   const handleAccordionClick = useCallback((accordionName) => {
     setActiveAccordion((prevAccordion) =>
       prevAccordion === accordionName ? null : accordionName
     );
   }, []);
 
+  // Adjust max-height based on content
   useEffect(() => {
-    // Adjust the max-height of accordion items based on content
     qualities.forEach(({ name }) => {
       const ref = accordionRefs[name];
       if (ref && ref.current) {
@@ -66,6 +94,7 @@ const Smo = () => {
     });
   }, [activeAccordion, accordionRefs, qualities]);
 
+  // Render
   return (
     <>
       <section id="what-is-smo">
@@ -73,12 +102,14 @@ const Smo = () => {
           <Answer
             title="What is SMO?"
             description="SMO (Social Media Organizer) is a tool designed to simplify your social media experience. Forget about the hassle of managing multiple accounts and passwords. With SMO, you can centralize and organize your social media information in one place."
+            answerRef={myRef1}
           />
           <Answer
             title="Why SMO?"
             description="SMO simplifies your social media experience. Centralize and organize all your accounts in one place, eliminating the hassle of managing multiple passwords."
+            answerRef={myRef2}
           />
-          <div className="accordion-container">
+          <div ref={myRef3} className="accordion-container">
             <div className="accordion-title">
               <h2>Key Qualities</h2>
             </div>
