@@ -1,0 +1,34 @@
+#accounts-modal {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#accounts-modal .modal-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: grid;
+    place-items: center
+}
+
+#accounts-modal .modal-content {
+    width: calc(100% - 20%);
+    height: 450px;
+    background-color: #EEEEEE;
+    border-radius: 15px;
+    position: relative;
+}
+
+#accounts-modal .close-icon {
+    color: #191919;
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    cursor: pointer;
+}
