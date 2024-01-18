@@ -1,7 +1,12 @@
 import "./AddAccount.css";
 import socialMediaImg from "../../assets/bg-img5.jpg";
 import AddAccountModal from "./AddAccountModal/AddAccountModal";
+import { useState } from "react";
 const AddAccount = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const handleModalButtonClick = () => {
+    setModalOpen((previous) => !previous);
+  };
   return (
     <section id="add-account">
       <div className="container">
@@ -11,13 +16,13 @@ const AddAccount = () => {
             <img src={socialMediaImg} alt="social media icons and logos" />
           </div>
           <div className="content">
-            <button className="add-account__button">
+            <button className="add-account__button" onClick={handleModalButtonClick}>
               <div className="add-icon">
-                <i class="fa-solid fa-plus"></i>
+                <i className="fa-solid fa-plus"></i>
               </div>
               <span className="content-text">Add Account here</span>
             </button>
-            <AddAccountModal />
+            <AddAccountModal onClose={handleModalButtonClick} isActive={modalOpen} />
           </div>
         </div>
       </div>

@@ -71,3 +71,44 @@
     font-weight: 600;
     font-size: 16px;
 }
+
+
+@media(min-width:400px){
+    .add-account__button{
+        width: 100%;
+    }
+}
+
+
+@media(min-width:576px){
+    .img-wrapper{
+        order: 1;
+    }
+    #add-account .content-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+
+    .add-account__button{
+        height: 100%;
+        border-radius: 20px;
+    }
+}
+
+
+@media(min-width:768px){
+    #add-account .add-icon{
+        width: 60px;
+        height: 60px;
+    }
+
+    #add-account .add-icon i{
+        font-size: 24px;
+    }
+
+    #add-account .content-text{
+        font-size: 18px;
+        margin-top: 15px;
+    }
+}
