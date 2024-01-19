@@ -4,7 +4,7 @@ const SocialMediaButton = ({ smName, smLogo }) => {
   return (
     <button className="social-media__button">
       <div className="social-media__logo">
-        {smLogo}
+        <img src={smLogo} alt="" />
       </div>
       <p className="social-media__name">{smName}</p>
     </button>

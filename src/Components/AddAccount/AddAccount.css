@@ -28,9 +28,14 @@
 
 #add-account .content {
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
 }
 
 .add-account__button {
+    width: 50%;
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #777;
@@ -43,12 +48,34 @@
     cursor: pointer;
     transition: background-color .3s, box-shadow .3s;
     color: #191919;
+    position: relative;
 }
 
 .add-account__button:hover {
     background-color: rgba(255, 255, 255, 0.801);
     box-shadow: 0 4px 8px #6d2e2e
-        /* Bluish box shadow */
+}
+
+.add-account__button::after{
+    content: "Add Account";
+    position: absolute;
+    font-family: "Manrope";
+    top: -30px;
+    font-weight: 600;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    font-size: 13px;
+    display: none;
+}
+
+.add-account__button:hover::after{
+    opacity: 1;
+    pointer-events: auto;
+    top: -35px;
 }
 
 #add-account .add-icon {
@@ -69,18 +96,32 @@
     margin-top: 10px;
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 
+
+
 @media(min-width:400px){
-    .add-account__button{
-        width: 100%;
+    #add-account .content-text{
+        font-size: 16px;
     }
 }
 
 
 @media(min-width:576px){
+    #add-account .content{
+        align-items: flex-start;
+    }
+
+    .add-account__button::after{
+        display: block;
+    }
+
+    .content-text{
+        display: none;
+    }
+
     .img-wrapper{
         order: 1;
     }
@@ -91,13 +132,16 @@
     }
 
     .add-account__button{
-        height: 100%;
         border-radius: 20px;
     }
 }
 
 
 @media(min-width:768px){
+    .content-text{
+        display: block;
+    }
+    
     #add-account .add-icon{
         width: 60px;
         height: 60px;
@@ -110,5 +154,9 @@
     #add-account .content-text{
         font-size: 18px;
         margin-top: 15px;
+    }
+
+    .add-account__button::after{
+        display: none;
     }
 }

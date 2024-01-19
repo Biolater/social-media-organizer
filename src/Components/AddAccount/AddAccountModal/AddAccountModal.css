@@ -31,9 +31,11 @@
     background-color: #EEEEEE;
     border-radius: 15px;
     position: relative;
-    width: calc(100% - 20%);
+    max-width: calc(100% - 20%);
     transition: .3s;
     transform: scale(0.3);
+    max-height: 300px;
+    overflow: auto;
 }
 
 #accounts-modal .close-icon {
@@ -63,7 +65,18 @@
     padding: 15px 20px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
  
+.social-media__logo img{
+    max-width: 100%;
+    width: 100%;
+}
+
+@media(min-width:442px){
+    #accounts-modal .modal-content{
+        width: 400px;
+    }
+}
