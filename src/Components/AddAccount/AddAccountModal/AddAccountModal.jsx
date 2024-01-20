@@ -1,7 +1,20 @@
 import "../AddAccountModal/AddAccountModal.css";
-import { facebookLogo, instagramLogo } from "../../../Data";
+import {
+  facebookLogo,
+  instagramLogo,
+  linkedinLogo,
+  twitterLogo,
+  pinterestLogo,
+  youtubeLogo,
+  snapchatLogo,
+  tiktokLogo,
+} from "../../../Data";
 import SocialMediaButton from "./SocialMediaButton";
-const AddAccountModal = ({ isActive, onClose }) => {
+const AddAccountModal = ({ isActive, onClose, setAccount }) => {
+  const onSocialMediaButtonClick = (smName) => {
+    setAccount(smName);
+    onClose();
+  }
   return (
     <div id="accounts-modal" className={`${isActive ? "active" : ""}`}>
       <div className="modal-overlay">
@@ -12,14 +25,46 @@ const AddAccountModal = ({ isActive, onClose }) => {
             </span>
           </div>
           <div className="modal-body">
-            <SocialMediaButton smName={"Instagram"} smLogo={instagramLogo} />
-            <SocialMediaButton smName={"Facebook"} smLogo={facebookLogo} />
-            <SocialMediaButton smName={"Instagram"} smLogo={instagramLogo} />
-            <SocialMediaButton smName={"Facebook"} smLogo={facebookLogo} />
-            <SocialMediaButton smName={"Instagram"} smLogo={instagramLogo} />
-            <SocialMediaButton smName={"Facebook"} smLogo={facebookLogo} />
-            <SocialMediaButton smName={"Instagram"} smLogo={instagramLogo} />
-            <SocialMediaButton smName={"Facebook"} smLogo={facebookLogo} />
+            <SocialMediaButton
+              onSelect={() => onSocialMediaButtonClick("Instagram")}
+              smName={"Instagram"}
+              smLogo={instagramLogo}
+            />
+            <SocialMediaButton
+              onSelect={() => onSocialMediaButtonClick("Facebook")}
+              smName={"Facebook"}
+              smLogo={facebookLogo}
+            />
+            <SocialMediaButton
+              onSelect={() => onSocialMediaButtonClick("Twitter")}
+              smName={"Twitter"}
+              smLogo={twitterLogo}
+            />
+            <SocialMediaButton
+              onSelect={() => onSocialMediaButtonClick("LinkedIn")}
+              smName={"LinkedIn"}
+              smLogo={linkedinLogo}
+            />
+            <SocialMediaButton
+              onSelect={() => onSocialMediaButtonClick("Pinterest")}
+              smName={"Pinterest"}
+              smLogo={pinterestLogo}
+            />
+            <SocialMediaButton
+              onSelect={() => onSocialMediaButtonClick("Youtube")}
+              smName={"Youtube"}
+              smLogo={youtubeLogo}
+            />
+            <SocialMediaButton
+              onSelect={() => onSocialMediaButtonClick("Snapchat")}
+              smName={"Snapchat"}
+              smLogo={snapchatLogo}
+            />
+            <SocialMediaButton
+              onSelect={() => onSocialMediaButtonClick("Tiktok")}
+              smName={"Tiktok"}
+              smLogo={tiktokLogo}
+            />
           </div>
         </div>
       </div>

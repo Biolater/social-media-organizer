@@ -1,8 +1,8 @@
 import "./SocialMediaButton.css";
 
-const SocialMediaButton = ({ smName, smLogo }) => {
+const SocialMediaButton = ({ smName, smLogo, onSelect }) => {
   return (
-    <button className="social-media__button">
+    <button onClick={onSelect}  className="social-media__button">
       <div className="social-media__logo">
         <img src={smLogo} alt="" />
       </div>

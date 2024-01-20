@@ -13,7 +13,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
     gap: 10px;
     transition: .3s;
 }
@@ -36,3 +35,4 @@
 .social-media__name {
     font-size: 16px;
 }
+
