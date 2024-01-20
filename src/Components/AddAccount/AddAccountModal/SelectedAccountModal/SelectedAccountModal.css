@@ -1,10 +1,106 @@
-.account-modal{
-    position: absolute;
-    background-color: red;
+.account-modal {
+    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    z-index: 11;
 }
 
 
+.account-modal__form>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-modal__layer {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-modal__content-header {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+}
+
+.account-modal .account-modal__content {
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(100% - 20%);
+    transition: .3s;
+    transform: scale(0.3);
+}
+
+.account-modal .close-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.account-modal__body {
+    padding: 15px 20px;
+}
+
+.account-modal.active .account-modal__content {
+    transform: scale(1);
+}
+
+.account-modal__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-modal label {
+    color: black;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.account-modal input {
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #777;
+    font-family: "Manrope";
+}
+
+.account-modal__button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 15px;
+
+}
+
+.account-modal__button {
+    font-family: "Manrope";
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    font-weight: 600;
+    border: 1px solid #777;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    transition: .3s;
+}
+
+.account-modal__button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}

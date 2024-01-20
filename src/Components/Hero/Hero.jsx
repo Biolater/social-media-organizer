@@ -16,7 +16,7 @@ const Hero = () => {
           Easily access your social media account information,without the hassle
           of remembering usernames and passwords.
         </h4>
-        <a href="#get-started" className="cta-button">
+        <a href="#add-account" className="cta-button">
           Get Started
         </a>
       </div>

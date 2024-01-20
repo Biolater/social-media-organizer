@@ -1,12 +1,16 @@
+import React, { useState, useEffect } from "react";
 import "./AddAccount.css";
 import socialMediaImg from "../../assets/bg-img5.jpg";
 import AddAccountModal from "./AddAccountModal/AddAccountModal";
 import SelectedAccountModal from "./AddAccountModal/SelectedAccountModal/SelectedAccountModal";
-import { useState } from "react";
+import SelectedAccountButton from "./AddAccountModal/SelectedAccountButton/SelectedAccountButton";
+
 const AddAccount = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedSocialMediaAccount, setSelectedSocialMediaAccount] =
     useState(null);
+  const [addedSocialMediaAccounts, setAddedSocialMediaAccounts] = useState([]);
+
   const handleModalButtonClick = () => {
     setModalOpen((previous) => !previous);
   };
@@ -14,6 +18,24 @@ const AddAccount = () => {
   const handleSocialMediaSelect = (smName) => {
     setSelectedSocialMediaAccount(smName);
   };
+
+  const handleAddSocialMediaAccount = (data) => {
+    setAddedSocialMediaAccounts((prevAccounts) => [...prevAccounts, data]);
+  };
+
+  useEffect(() => {
+    const storedAccounts =
+      JSON.parse(localStorage.getItem("socialMediaAccounts")) || [];
+    setAddedSocialMediaAccounts(storedAccounts);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "socialMediaAccounts",
+      JSON.stringify(addedSocialMediaAccounts)
+    );
+  }, [addedSocialMediaAccounts]);
+
   return (
     <section id="add-account">
       <div className="container">
@@ -23,6 +45,12 @@ const AddAccount = () => {
             <img src={socialMediaImg} alt="social media icons and logos" />
           </div>
           <div className="content">
+            {addedSocialMediaAccounts.map((accountData, index) => (
+              <SelectedAccountButton
+                key={index}
+                userName={accountData.username}
+              />
+            ))}
             <button
               className="add-account__button"
               onClick={handleModalButtonClick}
@@ -40,6 +68,8 @@ const AddAccount = () => {
             <SelectedAccountModal
               isActive={selectedSocialMediaAccount !== null}
               socialMediaName={selectedSocialMediaAccount}
+              onClose={() => handleSocialMediaSelect(null)}
+              onFormSubmit={(e) => handleAddSocialMediaAccount(e)}
             />
           </div>
         </div>
