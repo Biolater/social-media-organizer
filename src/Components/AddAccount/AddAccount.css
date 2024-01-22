@@ -28,14 +28,12 @@
 
 #add-account .content {
     margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-
 }
 
 .add-account__button {
-    width: 50%;
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #777;
@@ -49,6 +47,7 @@
     transition: background-color .3s, box-shadow .3s;
     color: #191919;
     position: relative;
+    grid-column: span 2;
 }
 
 .add-account__button:hover {
@@ -56,7 +55,7 @@
     box-shadow: 0 4px 8px #6d2e2e
 }
 
-.add-account__button::after{
+.add-account__button::after {
     content: "Add Account";
     position: absolute;
     font-family: "Manrope";
@@ -72,7 +71,7 @@
     display: none;
 }
 
-.add-account__button:hover::after{
+.add-account__button:hover::after {
     opacity: 1;
     pointer-events: auto;
     top: -35px;
@@ -102,61 +101,58 @@
 
 
 
-@media(min-width:400px){
-    #add-account .content-text{
+@media(min-width:400px) {
+    #add-account .content-text {
         font-size: 16px;
     }
 }
 
 
-@media(min-width:576px){
-    #add-account .content{
-        align-items: flex-start;
-    }
-
-    .add-account__button::after{
+@media(min-width:576px) {
+    .add-account__button::after {
         display: block;
     }
 
-    .content-text{
+    .content-text {
         display: none;
     }
 
-    .img-wrapper{
+    .img-wrapper {
         order: 1;
     }
-    #add-account .content-wrapper{
+
+    #add-account .content-wrapper {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 
-    .add-account__button{
+    .add-account__button {
         border-radius: 20px;
     }
 }
 
 
-@media(min-width:768px){
-    .content-text{
+@media(min-width:768px) {
+    .content-text {
         display: block;
     }
-    
-    #add-account .add-icon{
+
+    #add-account .add-icon {
         width: 60px;
         height: 60px;
     }
 
-    #add-account .add-icon i{
+    #add-account .add-icon i {
         font-size: 24px;
     }
 
-    #add-account .content-text{
+    #add-account .content-text {
         font-size: 18px;
         margin-top: 15px;
     }
 
-    .add-account__button::after{
+    .add-account__button::after {
         display: none;
     }
 }

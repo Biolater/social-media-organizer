@@ -2,11 +2,11 @@
   --bg-color: #EEEEEE;
   --special-font: 'PT Serif', serif;
   --text-color: #191919;
-  --normal-font : "Manrope", sans-serif;
+  --normal-font: "Manrope", sans-serif;
 }
 
-html{
-  scroll-behavior: smooth!important;
+html {
+  scroll-behavior: smooth !important;
 }
 
 *,

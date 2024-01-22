@@ -45,12 +45,6 @@ const AddAccount = () => {
             <img src={socialMediaImg} alt="social media icons and logos" />
           </div>
           <div className="content">
-            {addedSocialMediaAccounts.map((accountData, index) => (
-              <SelectedAccountButton
-                key={index}
-                userName={accountData.username}
-              />
-            ))}
             <button
               className="add-account__button"
               onClick={handleModalButtonClick}
@@ -60,6 +54,12 @@ const AddAccount = () => {
               </div>
               <span className="content-text">Add Account here</span>
             </button>
+            {addedSocialMediaAccounts.map((accountData, index) => (
+              <SelectedAccountButton
+                key={index}
+                userName={accountData.username}
+              />
+            ))}
             <AddAccountModal
               onClose={handleModalButtonClick}
               isActive={modalOpen}

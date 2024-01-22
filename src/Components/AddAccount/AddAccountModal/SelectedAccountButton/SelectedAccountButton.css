@@ -1,6 +1,5 @@
 .account-button {
     font-family: "Manrope";
-    width: 48%;
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #777;
@@ -10,4 +9,13 @@
     color: #191919;
     font-weight: 600;
     font-size: 18px;
+    height: 100%;
+}
+
+
+
+@media(min-width:576px){
+    .account-button{
+        border-radius: 20px;
+    }
 }
