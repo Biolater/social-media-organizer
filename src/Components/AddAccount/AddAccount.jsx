@@ -10,6 +10,7 @@ const AddAccount = () => {
   const [selectedSocialMediaAccount, setSelectedSocialMediaAccount] =
     useState(null);
   const [addedSocialMediaAccounts, setAddedSocialMediaAccounts] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   const handleModalButtonClick = () => {
     setModalOpen((previous) => !previous);
@@ -27,14 +28,22 @@ const AddAccount = () => {
     const storedAccounts =
       JSON.parse(localStorage.getItem("socialMediaAccounts")) || [];
     setAddedSocialMediaAccounts(storedAccounts);
+    setDataLoaded(true); // Signal that data has been loaded
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(
-      "socialMediaAccounts",
-      JSON.stringify(addedSocialMediaAccounts)
-    );
-  }, [addedSocialMediaAccounts]);
+    if (dataLoaded) {
+      localStorage.setItem(
+        "socialMediaAccounts",
+        JSON.stringify(addedSocialMediaAccounts)
+      );
+    }
+  }, [addedSocialMediaAccounts, dataLoaded]);
+
+  if (!dataLoaded) {
+    // Render a loading state or return null until data is loaded
+    return null;
+  }
 
   return (
     <section id="add-account">
@@ -58,6 +67,10 @@ const AddAccount = () => {
               <SelectedAccountButton
                 key={index}
                 userName={accountData.username}
+                userEmail={accountData.email}
+                userPassword={accountData.password}
+                userAccountLink={accountData.linkToProfile}
+                socialMediaName={accountData.platformName}
               />
             ))}
             <AddAccountModal
