@@ -5,7 +5,6 @@
     border: 1px solid #777;
     background-color: #ffffff;
     outline: none;
-    cursor: pointer;
     color: #191919;
     font-weight: 600;
     font-size: 18px;
@@ -13,9 +12,103 @@
 }
 
 
+.account-button .social-media__name {
+    margin: 3px 0px;
+}
 
-@media(min-width:576px){
-    .account-button{
+.account-button span {
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+}
+
+.account-button .account-information__modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    transition: .3s;
+    left: 0;
+    top: 0;
+    z-index: 11;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.account-button .account-information__modal-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+
+.account-button .account-information__modal-content{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 450px;
+    transition: .3s;
+    transform: scale(0.3);
+}
+
+.account-button .account-information__modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.account-button .account-information__modal-header-close{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 0px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.account-button .account-information__modal-header-close i{
+    color: black;
+}
+
+.account-button .account-information__modal-header-close:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media(min-width:576px) {
+    .account-button {
         border-radius: 20px;
     }
+
+    .account-button .social-media__name {
+        margin: 5px 0px;
+        font-size: 18px;
+    }
+
+    .account-button .account-name {
+        font-size: 18px;
+    }
+
+    .account-button span {
+        font-size: 18px;
+    }
+}
+
+.account-information__modal-body{
+    font-size: 15px;
+    text-align: left;
+}
+
+.account-information__modal.active .account-information__modal-content{
+    transform: scale(1);
 }

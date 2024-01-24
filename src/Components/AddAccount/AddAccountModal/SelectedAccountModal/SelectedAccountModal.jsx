@@ -60,7 +60,7 @@ const SelectedAccountModal = ({
                         {`${
                           field === "linkToProfile"
                             ? "Link to profile :"
-                            : `${field} :`
+                            : `${field[0].toUpperCase()}${field.slice(1)} :`
                         }`}
                       </label>
                       <input
