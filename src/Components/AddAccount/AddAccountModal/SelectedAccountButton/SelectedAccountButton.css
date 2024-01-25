@@ -112,3 +112,23 @@
 .account-information__modal.active .account-information__modal-content{
     transform: scale(1);
 }
+
+.delete-button__wrapper{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.delete-button{
+    padding: 10px;
+    background-color: #ff7d7d;
+    border-radius: 15px;
+    color: #ffffffc4;
+    width: 100%;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.delete-button:hover{
+    background-color: #ff7d7dc0;
+}

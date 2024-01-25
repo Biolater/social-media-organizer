@@ -6,6 +6,7 @@ const SelectedAccountButton = ({
   userEmail,
   userPassword,
   userAccountLink,
+  onDelete,
 }) => {
   const [informationModalActive, setInformationModalActive] = useState(false);
   const handleClick = () => {
@@ -18,6 +19,11 @@ const SelectedAccountButton = ({
         <p className="social-media__name">{`Social Media name : ${socialMediaName}`}</p>
       )}
       <span onClick={handleClick}>Click here to view information</span>
+      <div className="delete-button__wrapper">
+        <div className="delete-button" onClick={onDelete}>
+          <span>Delete Account</span>
+        </div>
+      </div>
       <div
         className={`account-information__modal ${
           informationModalActive ? "active" : ""
@@ -29,12 +35,12 @@ const SelectedAccountButton = ({
               <p className="account-information__modal-header-text">
                 Account Information
               </p>
-              <button
+              <div
                 className="account-information__modal-header-close"
                 onClick={handleClick}
               >
                 <i className="fa-solid fa-times"></i>
-              </button>
+              </div>
             </div>
             <div className="account-information__modal-body">
               <p className="account-information__modal-body-text">

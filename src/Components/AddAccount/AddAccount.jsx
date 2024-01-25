@@ -24,6 +24,12 @@ const AddAccount = () => {
     setAddedSocialMediaAccounts((prevAccounts) => [...prevAccounts, data]);
   };
 
+  const handleDeleteSocialMediaAccount = (accountIndex) => {
+    setAddedSocialMediaAccounts((previous) =>
+      previous.filter((_, idx) => accountIndex !== idx)
+    );
+  };
+
   useEffect(() => {
     const storedAccounts =
       JSON.parse(localStorage.getItem("socialMediaAccounts")) || [];
@@ -71,6 +77,7 @@ const AddAccount = () => {
                 userPassword={accountData.password}
                 userAccountLink={accountData.linkToProfile}
                 socialMediaName={accountData.platformName}
+                onDelete={() => handleDeleteSocialMediaAccount(index)}
               />
             ))}
             <AddAccountModal
