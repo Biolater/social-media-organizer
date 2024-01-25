@@ -132,3 +132,42 @@
 .delete-button:hover{
     background-color: #ff7d7dc0;
 }
+
+.edit-button__wrapper{
+    margin-top: 10px;
+}
+
+.edit-button{
+    padding: 10px;
+    background-color: var(--text-color);
+    border-radius: 15px;
+    color: #ffffffc4;
+    width: 100%;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.edit-button:hover{
+    background-color: #191919b2;
+}
+
+
+.edit-modal .account-information__modal-body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-modal input{
+    border: 1px solid #777;
+    font-family: "Manrope", "sans-serif";
+    font-weight: 600;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.edit-modal input:focus{
+    box-shadow: 0 0 5pt 2pt #D3D3D3;
+}
