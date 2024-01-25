@@ -133,6 +133,10 @@
 
 
 @media(min-width:768px) {
+    #add-account .content{
+        align-items: center;
+    }
+
     .content-text {
         display: block;
     }
@@ -153,6 +157,11 @@
 
     .add-account__button::after {
         display: none;
+    }
+
+    .add-account__button{
+        width: 50%;
+
     }
 
     .img-wrapper{
