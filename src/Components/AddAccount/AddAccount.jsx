@@ -22,12 +22,28 @@ const AddAccount = () => {
 
   const handleAddSocialMediaAccount = (data) => {
     setAddedSocialMediaAccounts((prevAccounts) => [...prevAccounts, data]);
+    console.log(addedSocialMediaAccounts);
   };
 
   const handleDeleteSocialMediaAccount = (accountIndex) => {
     setAddedSocialMediaAccounts((previous) =>
       previous.filter((_, idx) => accountIndex !== idx)
     );
+  };
+
+  const handleEditInformation = (
+    index,
+    userName,
+    userEmail,
+    userPassword,
+    userAccountLink
+  ) => {
+    const newAddedSocialMediaAccountsArray = [...addedSocialMediaAccounts];
+    newAddedSocialMediaAccountsArray[index].username = userName;
+    newAddedSocialMediaAccountsArray[index].email = userEmail;
+    newAddedSocialMediaAccountsArray[index].password = userPassword;
+    newAddedSocialMediaAccountsArray[index].linkToProfile = userAccountLink;
+    setAddedSocialMediaAccounts(newAddedSocialMediaAccountsArray);
   };
 
   useEffect(() => {
@@ -78,6 +94,15 @@ const AddAccount = () => {
                 userAccountLink={accountData.linkToProfile}
                 socialMediaName={accountData.platformName}
                 onDelete={() => handleDeleteSocialMediaAccount(index)}
+                onSave={(e) =>
+                  handleEditInformation(
+                    index,
+                    e.userName,
+                    e.userEmail,
+                    e.userPassword,
+                    e.userAccountLink
+                  )
+                }
               />
             ))}
             <AddAccountModal

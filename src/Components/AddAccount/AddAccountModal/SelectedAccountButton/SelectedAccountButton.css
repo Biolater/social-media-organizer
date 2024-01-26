@@ -9,6 +9,7 @@
     font-weight: 600;
     font-size: 18px;
     height: 100%;
+    text-align: center;
 }
 
 
@@ -22,7 +23,7 @@
     display: block;
 }
 
-.account-button .account-information__modal{
+.account-button .account-information__modal {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -34,7 +35,7 @@
     pointer-events: none;
 }
 
-.account-button .account-information__modal-overlay{
+.account-button .account-information__modal-overlay {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
@@ -44,7 +45,7 @@
     transition: .3s;
 }
 
-.account-button .account-information__modal-content{
+.account-button .account-information__modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -53,7 +54,7 @@
     transform: scale(0.3);
 }
 
-.account-button .account-information__modal-header{
+.account-button .account-information__modal-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -62,7 +63,7 @@
     font-weight: 700;
 }
 
-.account-button .account-information__modal-header-close{
+.account-button .account-information__modal-header-close {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,11 +78,11 @@
     transition: .3s;
 }
 
-.account-button .account-information__modal-header-close i{
+.account-button .account-information__modal-header-close i {
     color: black;
 }
 
-.account-button .account-information__modal-header-close:hover{
+.account-button .account-information__modal-header-close:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -104,22 +105,22 @@
     }
 }
 
-.account-information__modal-body{
+.account-information__modal-body {
     font-size: 15px;
     text-align: left;
 }
 
-.account-information__modal.active .account-information__modal-content{
+.account-information__modal.active .account-information__modal-content {
     transform: scale(1);
 }
 
-.delete-button__wrapper{
+.delete-button__wrapper {
     display: flex;
     align-items: center;
     margin-top: 15px;
 }
 
-.delete-button{
+.delete-button {
     padding: 10px;
     background-color: #ff7d7d;
     border-radius: 15px;
@@ -129,15 +130,15 @@
     transition: .3s;
 }
 
-.delete-button:hover{
+.delete-button:hover {
     background-color: #ff7d7dc0;
 }
 
-.edit-button__wrapper{
+.edit-button__wrapper {
     margin-top: 10px;
 }
 
-.edit-button{
+.edit-button {
     padding: 10px;
     background-color: var(--text-color);
     border-radius: 15px;
@@ -147,18 +148,18 @@
     transition: .3s;
 }
 
-.edit-button:hover{
+.edit-button:hover {
     background-color: #191919b2;
 }
 
 
-.edit-modal .account-information__modal-body{
+.edit-modal .account-information__modal-body {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.edit-modal input{
+.edit-modal input {
     border: 1px solid #777;
     font-family: "Manrope", "sans-serif";
     font-weight: 600;
@@ -168,6 +169,23 @@
     transition: .3s;
 }
 
-.edit-modal input:focus{
+.edit-modal input:focus {
     box-shadow: 0 0 5pt 2pt #D3D3D3;
+}
+
+.save-button{
+    border: none;
+    font-family: "Manrope", "sans-serif";
+    padding: 10px;
+    background-color: #ff7d7d;
+    border-radius: 15px;
+    color: #ffffffc4;
+    width: 100%;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.save-button:hover {
+    background-color: #ff7d7dc0;
 }
