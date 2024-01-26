@@ -34,18 +34,13 @@ const Navbar = () => {
               </a>
             </li>
             <li className="navbar-item">
-              <a href="" className="navbar-link">
-                About Me
+              <a href="#testimonials  " className="navbar-link">
+                Testimonials
               </a>
             </li>
             <li className="navbar-item">
-              <a href="" className="navbar-link">
-                My Portfolio
-              </a>
-            </li>
-            <li className="navbar-item">
-              <a href="" className="navbar-link">
-                Contact
+              <a href="#contact-us  " className="navbar-link">
+                Contact Us
               </a>
             </li>
           </ul>
@@ -64,7 +59,7 @@ const Navbar = () => {
             }`}
           >
             <li className="navbar-item">
-              <a href="#" className="navbar-link">
+              <a href="#add-account" className="navbar-link">
                 Get Started
               </a>
             </li>
@@ -74,18 +69,13 @@ const Navbar = () => {
               </a>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">
-                About Me
+              <a href="#testimonials" className="navbar-link">
+                Testimonials
               </a>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">
-                My Portfolio
-              </a>
-            </li>
-            <li className="navbar-item">
-              <a href="#" className="navbar-link">
-                Contact
+              <a href="#contact-us  " className="navbar-link">
+                Contact Us
               </a>
             </li>
           </ul>

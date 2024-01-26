@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import "./Smo.css";
 
-// Answer component
 const Answer = React.memo(({ title, description, answerRef }) => (
   <div className="answer" ref={answerRef}>
     <h2 className="section-title">{title}</h2>
@@ -9,9 +8,7 @@ const Answer = React.memo(({ title, description, answerRef }) => (
   </div>
 ));
 
-// Smo component
 const Smo = () => {
-  // Qualities data
   const qualities = [
     {
       name: "Easy to Use",

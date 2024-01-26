@@ -22,7 +22,6 @@ const AddAccount = () => {
 
   const handleAddSocialMediaAccount = (data) => {
     setAddedSocialMediaAccounts((prevAccounts) => [...prevAccounts, data]);
-    console.log(addedSocialMediaAccounts);
   };
 
   const handleDeleteSocialMediaAccount = (accountIndex) => {

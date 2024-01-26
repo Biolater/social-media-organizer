@@ -77,10 +77,21 @@ const SelectedAccountButton = ({
   };
 
   const handleEditingSave = () => {
+    // Check if any of the required fields are empty
+    if (
+      editedInformation.userName.trim() === "" ||
+      editedInformation.userEmail.trim() === "" ||
+      editedInformation.userPassword.trim() === "" ||
+      editedInformation.userAccountLink.trim() === ""
+    ) {
+      alert("Please fill in all required fields before saving.");
+      return; // Do not proceed with saving
+    }
+
+    // All required fields are filled, proceed with saving
     onSave(editedInformation);
     setIsEditing(false);
   };
-
   return (
     <div className="account-button">
       <p className="account-name">{`Account name : ${userName}`}</p>
@@ -132,6 +143,7 @@ const SelectedAccountButton = ({
           Username :{" "}
           <input
             type="text"
+            required
             onChange={(e) => handleEditInputChange(e, "userName")}
             value={editedInformation["userName"]}
           />
@@ -139,7 +151,8 @@ const SelectedAccountButton = ({
         <p className="account-information__modal-body-text">
           Email :{" "}
           <input
-            type="text"
+            type="email"
+            required
             onChange={(e) => handleEditInputChange(e, "userEmail")}
             value={editedInformation["userEmail"]}
           />
@@ -147,7 +160,8 @@ const SelectedAccountButton = ({
         <p className="account-information__modal-body-text">
           Password :{" "}
           <input
-            type="text"
+            type="password"
+            required
             onChange={(e) => handleEditInputChange(e, "userPassword")}
             value={editedInformation["userPassword"]}
           />
@@ -155,7 +169,8 @@ const SelectedAccountButton = ({
         <p className="account-information__modal-body-text">
           Account Link :{" "}
           <input
-            type="text"
+            type="url"
+            required
             onChange={(e) => handleEditInputChange(e, "userAccountLink")}
             value={editedInformation["userAccountLink"]}
           />

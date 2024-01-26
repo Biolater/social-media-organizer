@@ -11,8 +11,8 @@ const Hero = () => {
   return (
     <section id="hero-section">
       <div className="container">
-        <h1 className="hero-title font-bold">WELCOME TO THE SMO</h1>
-        <h4 className="hero-explanation font-semibold">
+        <h1 className="hero-title">WELCOME TO THE SMO</h1>
+        <h4 className="hero-explanation">
           Easily access your social media account information,without the hassle
           of remembering usernames and passwords.
         </h4>
