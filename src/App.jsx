@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import Smo from "./Components/WhatIsSmo/Smo";
 import AddAccount from "./Components/AddAccount/AddAccount";
+import Testimonials from "./Components/Testimonials/Testimonials";
 function App() {
   return (
     <>
@@ -10,6 +11,7 @@ function App() {
       <Hero />
       <Smo />
       <AddAccount />
+      <Testimonials />
     </>
   );
 }

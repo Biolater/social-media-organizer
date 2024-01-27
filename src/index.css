@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --bg-color: #EEEEEE;
   --special-font: 'PT Serif', serif;
@@ -67,3 +71,25 @@ ul {
     max-width: 1140px;
   }
 }
+
+input {
+  color: black !important;
+}
+
+.section-title {
+  font-weight: 700;
+}
+
+.accordion-title>h2 {
+  font-weight: 700;
+}
+
+.accordion-header p {
+  font-weight: 600;
+}
+
+.hero-title {
+  font-weight: 700;
+}
+
+
