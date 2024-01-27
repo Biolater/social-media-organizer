@@ -24,7 +24,7 @@ const Navbar = () => {
           </a>
           <ul className="navbar-links">
             <li className="navbar-item">
-              <a href="" className="navbar-link">
+              <a href="#add-account" className="navbar-link">
                 Get Started
               </a>
             </li>
@@ -39,7 +39,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="navbar-item">
-              <a href="#contact-us  " className="navbar-link">
+              <a href="#contact-us" className="navbar-link">
                 Contact Us
               </a>
             </li>
