@@ -69,7 +69,7 @@ const AddAccount = () => {
   return (
     <section id="add-account">
       <div className="container">
-        <h2 className="add-account__title font-bold text-2xl">Start by adding a new Account</h2>
+        <h2 className="add-account__title font-bold text-2xl md:text-4xl">Start by adding a new Account</h2>
         <div className="content-wrapper">
           <div className="img-wrapper">
             <img src={socialMediaImg} alt="social media icons and logos" />
