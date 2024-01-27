@@ -10,6 +10,7 @@
     font-size: 18px;
     height: 100%;
     text-align: center;
+    width: 100%;
 }
 
 
@@ -188,4 +189,11 @@
 
 .save-button:hover {
     background-color: #ff7d7dc0;
+}
+
+
+@media(min-width:768px){
+    .account-button{
+        width: unset;
+    }
 }

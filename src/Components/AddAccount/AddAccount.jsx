@@ -84,26 +84,28 @@ const AddAccount = () => {
               </div>
               <span className="content-text">Add Account here</span>
             </button>
-            {addedSocialMediaAccounts.map((accountData, index) => (
-              <SelectedAccountButton
-                key={index}
-                userName={accountData.username}
-                userEmail={accountData.email}
-                userPassword={accountData.password}
-                userAccountLink={accountData.linkToProfile}
-                socialMediaName={accountData.platformName}
-                onDelete={() => handleDeleteSocialMediaAccount(index)}
-                onSave={(e) =>
-                  handleEditInformation(
-                    index,
-                    e.userName,
-                    e.userEmail,
-                    e.userPassword,
-                    e.userAccountLink
-                  )
-                }
-              />
-            ))}
+            <div className="add-account__accounts">
+              {addedSocialMediaAccounts.map((accountData, index) => (
+                <SelectedAccountButton
+                  key={index}
+                  userName={accountData.username}
+                  userEmail={accountData.email}
+                  userPassword={accountData.password}
+                  userAccountLink={accountData.linkToProfile}
+                  socialMediaName={accountData.platformName}
+                  onDelete={() => handleDeleteSocialMediaAccount(index)}
+                  onSave={(e) =>
+                    handleEditInformation(
+                      index,
+                      e.userName,
+                      e.userEmail,
+                      e.userPassword,
+                      e.userAccountLink
+                    )
+                  }
+                />
+              ))}
+            </div>
             <AddAccountModal
               onClose={handleModalButtonClick}
               isActive={modalOpen}

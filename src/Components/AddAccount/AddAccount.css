@@ -47,7 +47,6 @@
     transition: background-color .3s, box-shadow .3s;
     color: #191919;
     position: relative;
-    grid-column: span 2;
 }
 
 .add-account__button:hover {
@@ -99,6 +98,16 @@
 }
 
 
+.add-account__accounts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-height: 490px;
+    overflow: auto;
+}
+
 
 
 @media(min-width:400px) {
@@ -122,7 +131,8 @@
     }
 
     #add-account .content-wrapper {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 10px;
     }
 
@@ -135,6 +145,10 @@
 @media(min-width:768px) {
     #add-account .content{
         align-items: center;
+    }
+
+    .add-account__accounts{
+        max-height: 489px;
     }
 
     .content-text {
